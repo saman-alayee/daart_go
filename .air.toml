@@ -1,0 +1,13 @@
+# .air.toml
+
+# Root path for the watcher
+root = "."
+
+# Build settings
+[build]
+  cmd = "go build -o ./cmd/main ./cmd/main.go"  # Ensure this path is correct
+  bin = "./cmd/main"                             # Path to the binary to run
+
+# Watch settings
+[watch]
+  delay = "1000ms"  # Delay before restarting

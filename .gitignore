@@ -1,0 +1,29 @@
+# Go binaries
+/bin
+/cmd/main
+
+# Dependency directories
+/vendor/
+
+# Go build cache
+*.a
+*.o
+*.out
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Air temporary files
+.air/
+
+
+
+# Log files
+*.log
