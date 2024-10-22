@@ -27,3 +27,5 @@ Thumbs.db
 
 # Log files
 *.log
+# Fresh temp files
+/tmp/
