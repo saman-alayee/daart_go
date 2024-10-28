@@ -31,6 +31,9 @@ func Init() *echo.Echo {
     e.POST("/users", handlers.CreateUser)  // Create a new user
     e.GET("/users", handlers.GetUsers)     // Get all users
     e.GET("/GetAd", handlers.GetAdSize)    // Get ad based on size
+    e.GET("/Callback", handlers.CallbackHandler)
+    e.GET("/MCallback", handlers.CallbackHandlerMobile)
+
 
     return e
 }

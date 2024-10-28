@@ -3,7 +3,7 @@ package tools
 import (
     "errors"
     "time"
-
+    "fmt"
     "github.com/golang-jwt/jwt/v4"
 )
 
@@ -17,6 +17,7 @@ type Claims struct {
     CampaignID string `json:"campaign_id"`
     RedirectURL string `json:"redirect_url"`
     ViewID     string `json:"view_id"`
+    PublisherID     string `json:"publisher_id"`
     jwt.RegisteredClaims
 }
 
@@ -29,13 +30,14 @@ func NewJwtHandler() *JwtHandler {
 }
 
 // EncodeToken creates a JWT token with campaign_id, redirect_url, and view_id
-func (j *JwtHandler) EncodeToken(campaignID, redirectURL, viewID string, validFor int) (string, error) {
+func (j *JwtHandler) EncodeToken(campaignID, redirectURL,publisherID, viewID string, validFor int) (string, error) {
     expirationTime := time.Now().Add(time.Duration(validFor) * time.Minute)
 
     claims := &Claims{
         CampaignID: campaignID,
         RedirectURL: redirectURL,
         ViewID:     viewID,
+        PublisherID:  publisherID,
         RegisteredClaims: jwt.RegisteredClaims{
             Issuer:    j.Domain,
             IssuedAt:  jwt.NewNumericDate(time.Now()),
@@ -85,5 +87,25 @@ func (j *JwtHandler) GetTokenData(tokenStr string) (map[string]interface{}, erro
         "campaign_id": claims.CampaignID,
         "redirect_url": claims.RedirectURL,
         "view_id":     claims.ViewID,
+        "publisher_id":     claims.PublisherID,
     }, nil
+}
+
+// DecodeToken decodes a JWT token and returns the claims
+func (h *JwtHandler) DecodeToken(tokenString string) (jwt.MapClaims, error) {
+	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
+		}
+		return []byte(h.SecretKey), nil
+	})
+
+	if err != nil {
+		return nil, err
+	}
+
+	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
+		return claims, nil
+	}
+	return nil, fmt.Errorf("invalid token")
 }
