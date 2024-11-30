@@ -1,0 +1,312 @@
+[{
+  "_id": {
+    "$oid": "67430210d7dbd70a230b7d88"
+  },
+  "campaign_ID": 84859,
+  "redirect_url": "https://rojashop.com/shop?onstock=true&order=discount&utm_campaign=jomerangi2&utm_medium=banner&utm_source=daartads",
+  "name": "ROJA-BlackFriday",
+  "image_url": "http://cdn.daartads.com/uploads/7f5aa5fb-3ea9-42a7-aeae-b3e4924211dc.jpg",
+  "width": 320,
+  "height": 50,
+  "type": "banner",
+  "access": {
+    "whitelists": [],
+    "blacklists": [
+      ""
+    ]
+  },
+  "activate": true,
+  "mobile": true,
+  "web": false,
+  "install": false,
+  "bid": 6000,
+  "dailybudget": 20000000
+},
+{
+  "_id": {
+    "$oid": "67430210d7dbd70a230b7d89"
+  },
+  "campaign_ID": 84859,
+  "redirect_url": "https://rojashop.com/shop?onstock=true&order=discount&utm_campaign=jomerangi2&utm_medium=banner&utm_source=daartads",
+  "name": "ROJA-BlackFriday",
+  "image_url": "http://cdn.daartads.com/uploads/3cdf2bc4-2a9d-44a7-b8f1-dd9db64a2807.jpg",
+  "width": 320,
+  "height": 100,
+  "type": "banner",
+  "access": {
+    "whitelists": [],
+    "blacklists": [
+      ""
+    ]
+  },
+  "activate": true,
+  "mobile": true,
+  "web": false,
+  "install": false,
+  "bid": 6000,
+  "dailybudget": 20000000
+},
+{
+  "_id": {
+    "$oid": "67430210d7dbd70a230b7d8a"
+  },
+  "campaign_ID": 84859,
+  "redirect_url": "https://rojashop.com/shop?onstock=true&order=discount&utm_campaign=jomerangi2&utm_medium=banner&utm_source=daartads",
+  "name": "ROJA-BlackFriday",
+  "image_url": "http://cdn.daartads.com/uploads/57d8c22d-ddaf-4f2a-9102-fbc349e60b64.jpg",
+  "width": 728,
+  "height": 90,
+  "type": "banner",
+  "access": {
+    "whitelists": [],
+    "blacklists": [
+      ""
+    ]
+  },
+  "activate": true,
+  "mobile": true,
+  "web": false,
+  "install": false,
+  "bid": 6000,
+  "dailybudget": 20000000
+},
+{
+  "_id": {
+    "$oid": "67430210d7dbd70a230b7d8b"
+  },
+  "campaign_ID": 84859,
+  "redirect_url": "https://rojashop.com/shop?onstock=true&order=discount&utm_campaign=jomerangi2&utm_medium=banner&utm_source=daartads",
+  "name": "ROJA-BlackFriday",
+  "image_url": "http://cdn.daartads.com/uploads/0643bc60-0866-426f-af82-a96147a78266.jpeg",
+  "width": 192,
+  "height": 192,
+  "type": "LOGO",
+  "access": {
+    "whitelists": [],
+    "blacklists": [
+      ""
+    ]
+  },
+  "activate": true,
+  "mobile": true,
+  "web": false,
+  "install": false,
+  "bid": 6000,
+  "dailybudget": 20000000
+},
+{
+  "_id": {
+    "$oid": "67430210d7dbd70a230b7d8c"
+  },
+  "campaign_ID": 84859,
+  "redirect_url": "https://rojashop.com/shop?onstock=true&order=discount&utm_campaign=jomerangi2&utm_medium=banner&utm_source=daartads",
+  "name": "ROJA-BlackFriday",
+  "image_url": "http://cdn.daartads.com/uploads/7892c2cc-b602-4e93-9457-111e0b44b034.jpeg",
+  "width": 720,
+  "height": 360,
+  "type": "BANNER",
+  "access": {
+    "whitelists": [],
+    "blacklists": [
+      ""
+    ]
+  },
+  "activate": true,
+  "mobile": true,
+  "web": false,
+  "install": false,
+  "bid": 6000,
+  "dailybudget": 20000000
+},
+{
+  "_id": {
+    "$oid": "67430210d7dbd70a230b7d8d"
+  },
+  "campaign_ID": 84859,
+  "redirect_url": "https://rojashop.com/shop?onstock=true&order=discount&utm_campaign=jomerangi2&utm_medium=banner&utm_source=daartads",
+  "name": "ROJA-BlackFriday",
+  "image_url": "http://cdn.daartads.com/uploads/f33b505d-e237-48aa-92e1-30791e08957c.jpeg",
+  "width": 468,
+  "height": 60,
+  "type": "BANNER",
+  "access": {
+    "whitelists": [],
+    "blacklists": [
+      ""
+    ]
+  },
+  "activate": true,
+  "mobile": true,
+  "web": false,
+  "install": false,
+  "bid": 6000,
+  "dailybudget": 20000000
+},
+{
+  "_id": {
+    "$oid": "67430210d7dbd70a230b7d8e"
+  },
+  "campaign_ID": 84859,
+  "redirect_url": "https://rojashop.com/shop?onstock=true&order=discount&utm_campaign=jomerangi2&utm_medium=banner&utm_source=daartads",
+  "name": "ROJA-BlackFriday",
+  "image_url": "http://cdn.daartads.com/uploads/0f0d5243-4189-4216-9e01-dcc2a14b3832.jpeg",
+  "width": 468,
+  "height": 60,
+  "type": "BANNER",
+  "access": {
+    "whitelists": [],
+    "blacklists": [
+      ""
+    ]
+  },
+  "activate": true,
+  "mobile": true,
+  "web": false,
+  "install": false,
+  "bid": 6000,
+  "dailybudget": 20000000
+},
+{
+  "_id": {
+    "$oid": "67430210d7dbd70a230b7d8f"
+  },
+  "campaign_ID": 84859,
+  "redirect_url": "https://rojashop.com/shop?onstock=true&order=discount&utm_campaign=jomerangi2&utm_medium=banner&utm_source=daartads",
+  "name": "ROJA-BlackFriday",
+  "image_url": "http://cdn.daartads.com/uploads/935c9824-b585-4376-9253-8b2a993c5e1a.jpeg",
+  "width": 720,
+  "height": 480,
+  "type": "BANNER",
+  "access": {
+    "whitelists": [],
+    "blacklists": [
+      ""
+    ]
+  },
+  "activate": true,
+  "mobile": true,
+  "web": false,
+  "install": false,
+  "bid": 6000,
+  "dailybudget": 20000000
+},
+{
+  "_id": {
+    "$oid": "67430210d7dbd70a230b7d90"
+  },
+  "campaign_ID": 84859,
+  "redirect_url": "https://rojashop.com/shop?onstock=true&order=discount&utm_campaign=jomerangi2&utm_medium=banner&utm_source=daartads",
+  "name": "ROJA-BlackFriday",
+  "image_url": "http://cdn.daartads.com/uploads/dd3f0d5e-4dbc-4a4f-b238-789cae4bf772.jpeg",
+  "width": 300,
+  "height": 250,
+  "type": "BANNER",
+  "access": {
+    "whitelists": [],
+    "blacklists": [
+      ""
+    ]
+  },
+  "activate": true,
+  "mobile": true,
+  "web": false,
+  "install": false,
+  "bid": 6000,
+  "dailybudget": 20000000
+},
+{
+  "_id": {
+    "$oid": "67430210d7dbd70a230b7d91"
+  },
+  "campaign_ID": 84859,
+  "redirect_url": "https://rojashop.com/shop?onstock=true&order=discount&utm_campaign=jomerangi2&utm_medium=banner&utm_source=daartads",
+  "name": "ROJA-BlackFriday",
+  "image_url": "http://cdn.daartads.com/uploads/e05ee423-f92e-4483-a586-a77407572a99.jpeg",
+  "width": 320,
+  "height": 100,
+  "type": "BANNER",
+  "access": {
+    "whitelists": [],
+    "blacklists": [
+      ""
+    ]
+  },
+  "activate": true,
+  "mobile": true,
+  "web": false,
+  "install": false,
+  "bid": 6000,
+  "dailybudget": 20000000
+},
+{
+  "_id": {
+    "$oid": "67430210d7dbd70a230b7d92"
+  },
+  "campaign_ID": 84859,
+  "redirect_url": "https://rojashop.com/shop?onstock=true&order=discount&utm_campaign=jomerangi2&utm_medium=banner&utm_source=daartads",
+  "name": "ROJA-BlackFriday",
+  "image_url": "http://cdn.daartads.com/uploads/276839c3-1ef7-4e45-9c56-d2509ec34530.jpeg",
+  "width": 728,
+  "height": 90,
+  "type": "BANNER",
+  "access": {
+    "whitelists": [],
+    "blacklists": [
+      ""
+    ]
+  },
+  "activate": true,
+  "mobile": true,
+  "web": false,
+  "install": false,
+  "bid": 6000,
+  "dailybudget": 20000000
+},
+{
+  "_id": {
+    "$oid": "67430210d7dbd70a230b7d93"
+  },
+  "campaign_ID": 84859,
+  "redirect_url": "https://rojashop.com/shop?onstock=true&order=discount&utm_campaign=jomerangi2&utm_medium=banner&utm_source=daartads",
+  "name": "ROJA-BlackFriday",
+  "image_url": "http://cdn.daartads.com/uploads/5db626ea-971a-49f4-b0e7-925d024ecea7.jpeg",
+  "width": 720,
+  "height": 360,
+  "type": "BANNER",
+  "access": {
+    "whitelists": [],
+    "blacklists": [
+      ""
+    ]
+  },
+  "activate": true,
+  "mobile": true,
+  "web": false,
+  "install": false,
+  "bid": 6000,
+  "dailybudget": 20000000
+},
+{
+  "_id": {
+    "$oid": "67430210d7dbd70a230b7d94"
+  },
+  "campaign_ID": 84859,
+  "redirect_url": "https://rojashop.com/shop?onstock=true&order=discount&utm_campaign=jomerangi2&utm_medium=banner&utm_source=daartads",
+  "name": "ROJA-BlackFriday",
+  "image_url": "http://cdn.daartads.com/uploads/caf2f4ef-cf49-46ea-980f-b4642cc2f67d.jpeg",
+  "width": 320,
+  "height": 50,
+  "type": "BANNER",
+  "access": {
+    "whitelists": [],
+    "blacklists": [
+      ""
+    ]
+  },
+  "activate": true,
+  "mobile": true,
+  "web": false,
+  "install": false,
+  "bid": 6000,
+  "dailybudget": 20000000
+}]
