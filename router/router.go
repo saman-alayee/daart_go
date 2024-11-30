@@ -1,39 +1,49 @@
 package router
 
 import (
-    "project/handlers"
-    "github.com/labstack/echo/v4"
-    "github.com/labstack/echo/v4/middleware"
-    "fmt"     // New: for forcing new line printing
+	"fmt"
+	"project/handlers"
+	"project/middleware"
+
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 func Init() *echo.Echo {
-    e := echo.New()
+	e := echo.New()
 
-    // Custom logger to force new line with Printf formatting
-    e.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
-        Format: `${method} ${uri} ${status} ${latency_human} ${time_rfc3339}`, // Ensure newline formatting
-        Output: middleware.DefaultLoggerConfig.Output, // Use default log output
-    }))
+	// Custom logger to force new line with Printf formatting
+	e.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
+		Format: `${method} ${uri} ${status} ${latency_human} ${time_rfc3339}\n`,
+		Output: middleware.DefaultLoggerConfig.Output,
+	}))
 
-    e.Use(middleware.Recover())
+	e.Use(middleware.Recover())
 
-    // Print an extra blank line after each request log for debugging
-    e.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
-        return func(c echo.Context) error {
-            err := next(c)
-            fmt.Println() // Force a new line after each request for debugging
-            return err
-        }
-    })
+	// Print an extra blank line after each request log for debugging
+	e.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
+		return func(c echo.Context) error {
+			err := next(c)
+			fmt.Println() // Force a new line after each request for debugging
+			return err
+		}
+	})
 
-    // Routes
-    e.POST("/users", handlers.CreateUser)  // Create a new user
-    e.GET("/users", handlers.GetUsers)     // Get all users
-    e.GET("/GetAd", handlers.GetAdSize)    // Get ad based on size
-    e.GET("/Callback", handlers.CallbackHandler)
-    e.GET("/MCallback", handlers.CallbackHandlerMobile)
+	// Group all routes under "/api"
+	api := e.Group("/api")
 
+	// Public Routes (No middleware applied)
+	api.POST("/users", handlers.CreateUser)        // Create a new user
+	api.POST("/auth/login", handlers.Login)        // Login and get a token
+	api.GET("/Callback", handlers.CallbackHandler) // Public callback
+	api.GET("/MCallback", handlers.CallbackHandlerMobile)
 
-    return e
+	// Protected Routes (Require JWT token)
+	apiProtected := api.Group("") // Nested under "/api"
+	apiProtected.Use(middlewares.CheckTokenMiddleware)// Apply token-checking middleware
+
+	apiProtected.GET("/users", handlers.GetUsers)     // Get all users (protected)
+	apiProtected.GET("/GetAd", handlers.GetAdSize)    // Get ad based on size (protected)
+
+	return e
 }
