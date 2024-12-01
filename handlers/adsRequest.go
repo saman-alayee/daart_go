@@ -6,6 +6,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"log"
+	"os"
 	"net/http"
 	"project/database"
 	"project/enums"
@@ -195,10 +196,15 @@ func GetAdSize(c echo.Context) error {
 		})
 	}
 
+	baseURL := os.Getenv("BASE_URL")
+	if baseURL == "" {
+		baseURL = "http://localhost:8080"
+	}
+
 	// Set redirect path based on forMobile
-	redirectPath := "http://localhost:8080/api/Callback?token="
+	redirectPath := baseURL + "/api/Callback?token="
 	if forMobile {
-		redirectPath = "http://localhost:8080/api/MCallback?token="
+		redirectPath = baseURL + "/api/MCallback?token="
 	}
 
 	// Prepare the filtered campaign response

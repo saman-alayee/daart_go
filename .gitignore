@@ -24,7 +24,7 @@ Thumbs.db
 .air/
 
 
-
+.env
 # Log files
 *.log
 # Fresh temp files
