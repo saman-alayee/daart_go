@@ -202,9 +202,9 @@ func GetAdSize(c echo.Context) error {
 	}
 
 	// Set redirect path based on forMobile
-	redirectPath := baseURL + "/api/Callback?token="
+	redirectPath := baseURL + "/api/v1/Callback?token="
 	if forMobile {
-		redirectPath = baseURL + "/api/MCallback?token="
+		redirectPath = baseURL + "/api/v1/MCallback?token="
 	}
 
 	// Prepare the filtered campaign response

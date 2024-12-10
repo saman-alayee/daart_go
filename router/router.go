@@ -30,7 +30,7 @@ func Init() *echo.Echo {
 	})
 
 	// Group all routes under "/api"
-	api := e.Group("/api")
+	api := e.Group("/api/v1")
 
 	// Public Routes (No middleware applied)
 	api.POST("/users", handlers.CreateUser)        // Create a new user

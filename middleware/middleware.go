@@ -16,8 +16,9 @@ func CheckTokenMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 
 		// Check if the Authorization header is missing or malformed
 		if authHeader == "" || !strings.HasPrefix(authHeader, "Bearer ") {
-			return c.JSON(http.StatusUnauthorized, map[string]string{
-				"error": "Missing or invalid Authorization header",
+			return c.JSON(http.StatusUnauthorized, map[string]interface{}{
+				"status":  http.StatusUnauthorized,
+				"message": "Missing or invalid Authorization header",
 			})
 		}
 
@@ -31,15 +32,19 @@ func CheckTokenMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 		token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
 			// Ensure the token is signed with the correct method
 			if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
-				return nil, echo.NewHTTPError(http.StatusUnauthorized, "Unexpected signing method")
+				return nil, echo.NewHTTPError(http.StatusUnauthorized, map[string]interface{}{
+					"status":  http.StatusUnauthorized,
+					"message": "Unexpected signing method",
+				})
 			}
 			return []byte(secretKey), nil
 		})
 
 		// Handle parsing errors or invalid tokens
 		if err != nil {
-			return c.JSON(http.StatusUnauthorized, map[string]string{
-				"error": "Invalid or expired token",
+			return c.JSON(http.StatusUnauthorized, map[string]interface{}{
+				"status":  http.StatusUnauthorized,
+				"message": "Invalid or expired token",
 			})
 		}
 
@@ -58,8 +63,9 @@ func CheckTokenMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 		}
 
 		// If token validation fails
-		return c.JSON(http.StatusUnauthorized, map[string]string{
-			"error": "Invalid token claims",
+		return c.JSON(http.StatusUnauthorized, map[string]interface{}{
+			"status":  http.StatusUnauthorized,
+			"message": "Invalid token claims",
 		})
 	}
 }
