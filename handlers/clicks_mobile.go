@@ -79,7 +79,7 @@ func CallbackHandlerMobile(c echo.Context) error {
     }
 
     // Get the MongoDB collection for clicks
-    collection := database.GetCollection("clicks")
+    collection := database.GetCollection("clicks_mobile")
 
     // Save the click information in the collection
     _, err = collection.InsertOne(c.Request().Context(), click)
