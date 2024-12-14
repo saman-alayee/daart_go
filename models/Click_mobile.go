@@ -2,7 +2,6 @@ package models
 
 // Click_mobile represents a click_mobile event in the system.
 type Click_mobile struct {
-	ViewID      string `bson:"view_ID" json:"view_ID"`
 	PublisherID string `bson:"publisher_ID" json:"publisher_ID"`
 	CampaignID  string `bson:"campaign_ID" json:"campaign_ID"`
 	Requested   int64  `bson:"requested" json:"requested"` // Unix timestamp when the click_mobile was requested

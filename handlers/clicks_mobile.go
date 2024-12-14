@@ -40,10 +40,6 @@ func CallbackHandlerMobile(c echo.Context) error {
     if !ok {
         return handleError(c, http.StatusBadRequest, "Missing or invalid campaign_ID in token")
     }
-    viewID, ok := claims["view_id"].(string)
-    if !ok {
-        return handleError(c, http.StatusBadRequest, "Missing or invalid view_ID in token")
-    }
     publisherIDStr, ok := claims["publisher_id"].(string)
     if !ok {
         return handleError(c, http.StatusBadRequest, "Missing or invalid publisher_ID in token")
@@ -70,7 +66,6 @@ func CallbackHandlerMobile(c echo.Context) error {
 
     // Create the Click object
     click := models.Click_mobile{
-        ViewID:      viewID,
         PublisherID: publisherIDStr,
         CampaignID:  campaignIDStr,
         Requested:   time.Now().Unix(),

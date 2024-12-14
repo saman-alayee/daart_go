@@ -20,7 +20,7 @@ type ErrorResponse struct {
     Status  int    `json:"status"`
     Message string `json:"message"`
 }
-func SaveAdRequestToDB(viewID string, campaignID int, publisherID int, ip string, web bool, origin string) error {
+func SaveAdRequestToDB(viewID string, campaignID int, publisherID int, web bool, origin string) error {
 	// Get the collection
 	collection := database.GetCollection("ads_requests")
 
@@ -31,7 +31,6 @@ func SaveAdRequestToDB(viewID string, campaignID int, publisherID int, ip string
 		PublisherID: publisherID,
 		Created:     time.Now().Unix(), // Get the current Unix timestamp
 		Origin:      origin,
-		IP:          ip,
 	}
 
 	// Insert the ad request into MongoDB
@@ -216,12 +215,11 @@ func GetAdSize(c echo.Context) error {
 		"status":       200,
 	}
 
-	// Get client IP and origin
-	ip := tools.GetClientIP(c.Request())
+	// Get and origin
 	origin := tools.GetOrigin(c.Request())
 
 	// Save the ad request to the database
-	if err := SaveAdRequestToDB(viewID, campaignID, publisherIDInt, ip, webProvided, origin); err != nil {
+	if err := SaveAdRequestToDB(viewID, campaignID, publisherIDInt, webProvided, origin); err != nil {
 		return c.JSON(http.StatusInternalServerError, ErrorResponse{
 			Status:  http.StatusInternalServerError,
 			Message: "Failed to save ad request",

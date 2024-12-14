@@ -9,5 +9,4 @@ type AdsRequest struct {
 	PublisherID int   `bson:"publisher_id" json:"publisher_id"`
 	Created    int64  `bson:"created" json:"created"`
 	Origin     string `bson:"origin" json:"origin"`
-	IP         string `bson:"ip" json:"ip"`
 }
