@@ -64,8 +64,8 @@ func CallbackHandler(c echo.Context) error {
     // Create the Click object
     click := models.Click{
         ViewID:      viewID,
-        PublisherID: publisherIDStr,
-        CampaignID:  campaignIDStr,
+        PublisherID: publisherID,
+        CampaignID:  campaignID,
         Requested:   time.Now().Unix(),
         Counted:     true, // Set to 1 for initial count
         IP:          ip,

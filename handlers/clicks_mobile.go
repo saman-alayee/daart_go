@@ -66,8 +66,8 @@ func CallbackHandlerMobile(c echo.Context) error {
 
     // Create the Click object
     click := models.Click_mobile{
-        PublisherID: publisherIDStr,
-        CampaignID:  campaignIDStr,
+        PublisherID: publisherID,
+        CampaignID:  campaignID,
         Requested:   time.Now().Unix(),
         Counted:     true, // Set to 1 for initial count
         IP:          ip,
